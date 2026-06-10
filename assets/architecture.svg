@@ -1,0 +1,89 @@
+<svg class="flow-svg" viewBox="0 0 860 480" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#00d4ff" opacity="0.7"/>
+    </marker>
+    <marker id="arr2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#7c5cf0" opacity="0.7"/>
+    </marker>
+    <marker id="arr3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#00e676" opacity="0.7"/>
+    </marker>
+  </defs>
+
+  <!-- Row 1: Data Sources -->
+  <rect x="20" y="20" width="160" height="56" rx="10" fill="#0f1a2e" stroke="#1e2d45" stroke-width="1.5"/>
+  <text x="100" y="44" text-anchor="middle" fill="#f97316" font-size="12" font-weight="600">Kafka / Banking</text>
+  <text x="100" y="62" text-anchor="middle" fill="#94a3b8" font-size="11">Events Feed</text>
+
+  <rect x="220" y="20" width="160" height="56" rx="10" fill="#0f1a2e" stroke="#1e2d45" stroke-width="1.5"/>
+  <text x="300" y="44" text-anchor="middle" fill="#f97316" font-size="12" font-weight="600">MongoDB Live</text>
+  <text x="300" y="62" text-anchor="middle" fill="#94a3b8" font-size="11">Alert Persistence</text>
+
+  <!-- Row 2: Ingestion -->
+  <rect x="120" y="130" width="200" height="56" rx="10" fill="#131e30" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="220" y="152" text-anchor="middle" fill="#00d4ff" font-size="12" font-weight="700">Radar Ingestion</text>
+  <text x="220" y="170" text-anchor="middle" fill="#94a3b8" font-size="11">Live / Paused Toggle</text>
+
+  <!-- Row 3: RAG + PII -->
+  <rect x="20" y="240" width="180" height="56" rx="10" fill="#13102a" stroke="#7c5cf0" stroke-width="1.5"/>
+  <text x="110" y="262" text-anchor="middle" fill="#a78bfa" font-size="12" font-weight="700">RAG Cosine Search</text>
+  <text x="110" y="280" text-anchor="middle" fill="#94a3b8" font-size="11">TF-IDF · SOP Index</text>
+
+  <rect x="240" y="240" width="180" height="56" rx="10" fill="#1a1010" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="330" y="262" text-anchor="middle" fill="#f87171" font-size="12" font-weight="700">PII Masking Engine</text>
+  <text x="330" y="280" text-anchor="middle" fill="#94a3b8" font-size="11">Cards · Emails · Phones</text>
+
+  <!-- Row 3: Prompt Synthesizer -->
+  <rect x="460" y="240" width="180" height="56" rx="10" fill="#0f1520" stroke="#1e2d45" stroke-width="1.5"/>
+  <text x="550" y="262" text-anchor="middle" fill="#e2e8f0" font-size="12" font-weight="700">Prompt Synthesizer</text>
+  <text x="550" y="280" text-anchor="middle" fill="#94a3b8" font-size="11">Context Assembly</text>
+
+  <!-- Row 4: Mode Router -->
+  <rect x="350" y="350" width="200" height="56" rx="10" fill="#0f1520" stroke="#1e2d45" stroke-width="1.5"/>
+  <text x="450" y="372" text-anchor="middle" fill="#e2e8f0" font-size="12" font-weight="700">Mode Router</text>
+  <text x="450" y="390" text-anchor="middle" fill="#94a3b8" font-size="11">Demo vs Real API</text>
+
+  <!-- Row 4: Gemini API -->
+  <rect x="640" y="350" width="200" height="56" rx="10" fill="#081828" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="740" y="366" text-anchor="middle" fill="#00d4ff" font-size="12" font-weight="700">Gemini API Cascade</text>
+  <text x="740" y="384" text-anchor="middle" fill="#94a3b8" font-size="10">Flash → Pro → 2.0 Flash</text>
+  <text x="740" y="398" text-anchor="middle" fill="#94a3b8" font-size="10">2.0 Pro → 1.0 Pro</text>
+
+  <!-- Row 5: Dashboard Output -->
+  <rect x="120" y="420" width="200" height="48" rx="10" fill="#0a1a10" stroke="#00e676" stroke-width="1.5"/>
+  <text x="220" y="444" text-anchor="middle" fill="#00e676" font-size="12" font-weight="700">Operations Dashboard</text>
+  <text x="220" y="460" text-anchor="middle" fill="#94a3b8" font-size="11">Alerts · Co-Pilot · Forecast</text>
+
+  <!-- ARROWS -->
+  <!-- Events → Radar -->
+  <line x1="100" y1="76" x2="180" y2="130" stroke="#00d4ff" stroke-width="1.5" marker-end="url(#arr)" opacity="0.6"/>
+  <line x1="300" y1="76" x2="270" y2="130" stroke="#00d4ff" stroke-width="1.5" marker-end="url(#arr)" opacity="0.6"/>
+  <!-- Radar → RAG -->
+  <line x1="180" y1="186" x2="140" y2="240" stroke="#7c5cf0" stroke-width="1.5" marker-end="url(#arr2)" opacity="0.7"/>
+  <!-- Radar → PII -->
+  <line x1="260" y1="186" x2="300" y2="240" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)" opacity="0.6"/>
+  <!-- RAG + PII → Synthesizer -->
+  <line x1="200" y1="268" x2="460" y2="268" stroke="#7c5cf0" stroke-width="1.5" marker-end="url(#arr2)" opacity="0.5"/>
+  <line x1="420" y1="268" x2="460" y2="268" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)" opacity="0.5"/>
+  <!-- Synthesizer → Router -->
+  <line x1="550" y1="296" x2="490" y2="350" stroke="#e2e8f0" stroke-width="1.5" marker-end="url(#arr)" opacity="0.4"/>
+  <!-- Router → Gemini -->
+  <line x1="550" y1="378" x2="640" y2="378" stroke="#00d4ff" stroke-width="1.5" marker-end="url(#arr)" opacity="0.7"/>
+  <!-- Gemini → Dashboard -->
+  <line x1="740" y1="406" x2="320" y2="444" stroke="#00e676" stroke-width="1.5" marker-end="url(#arr3)" opacity="0.6"/>
+  <!-- Router → Dashboard -->
+  <line x1="380" y1="406" x2="280" y2="420" stroke="#00e676" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr3)" opacity="0.5"/>
+
+  <!-- Legend -->
+  <rect x="20" y="355" width="240" height="82" rx="8" fill="rgba(15,21,32,0.9)" stroke="#1e2d45" stroke-width="1"/>
+  <text x="32" y="374" fill="#94a3b8" font-size="10">LEGEND</text>
+  <line x1="32" y1="385" x2="56" y2="385" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="62" y="389" fill="#94a3b8" font-size="10">Live data flow</text>
+  <line x1="32" y1="400" x2="56" y2="400" stroke="#7c5cf0" stroke-width="1.5"/>
+  <text x="62" y="404" fill="#94a3b8" font-size="10">RAG retrieval</text>
+  <line x1="32" y1="415" x2="56" y2="415" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="62" y="419" fill="#94a3b8" font-size="10">PII scrub path</text>
+  <line x1="32" y1="430" x2="56" y2="430" stroke="#00e676" stroke-width="1.5"/>
+  <text x="62" y="434" fill="#94a3b8" font-size="10">AI response output</text>
+</svg>
