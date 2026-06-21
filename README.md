@@ -32,7 +32,7 @@ Modern financial data pipelines frequently experience transient disruptions (e.g
 1. **Jargon Translation**: Converting complex error codes like `DEAD_LETTER` to friendly phrases like "Failed Items Queue Spike" with detailed debug views.
 2. **Recursive PII Masking**: Scrubbing sensitive fields (credit cards, emails, account numbers, phones) before dispatching to external LLMs.
 3. **Local RAG Retrieval**: Indexing Standard Operating Procedures (SOPs) locally in a similarity search index to augment prompt context without external data leaks.
-4. **Resilient Model Rotation**: Automatically cascading through 5 different fallback Gemini models upon encountering quota rate limits (`429`).
+4. **Resilient Key & Model Rotation**: Automatically cascading through 4 backup API keys and 5 fallback Gemini models upon encountering quota limits (`429`).
 5. **Operational Forecasting**: Identifying data trends and predicting potential operational anomalies before they occur.
 
 ---
@@ -45,7 +45,7 @@ Modern financial data pipelines frequently experience transient disruptions (e.g
 ```
 User Dashboard
     ↓
-AI Analysis Layer (Model Rotation)
+AI Analysis Layer (Key & Model Rotation)
     ↓
 PII Masking & Security Filter (Redacts Credit Cards, Accounts, Emails, Phones)
     ↓
@@ -89,7 +89,7 @@ Actionable Resolution Suggestions
 - **Reduced Mean Time To Resolution (MTTR)**: Fast, natural-language explanation of technical errors helps operations resolve alerts up to 80% faster.
 - **Enhanced Data Compliance**: Recursive PII masking ensures strict adherence to financial security regulations (PCI-DSS, GDPR).
 - **Reduced Tribal Knowledge Reliance**: Automatically surfaces runbook instructions for incoming alerts via local RAG.
-- **High Availability**: The 5-model cascade failover mechanism ensures uninterrupted AI insights during quota exhaustion spikes.
+- **High Availability**: A nested failover mechanism cascading through 4 backup API keys and 5 distinct Gemini models ensures uninterrupted AI operations during quota exhaustion spikes.
 
 ---
 
